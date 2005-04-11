@@ -2,6 +2,7 @@
 
 require 'socket'
 require 'Rex/Post/Zeterpreter/ClientCore'
+require 'Rex/Post/Zeterpreter/Channel'
 require 'Rex/Post/Zeterpreter/ObjectAliases'
 require 'Rex/Post/Zeterpreter/Packet'
 require 'Rex/Post/Zeterpreter/PacketParser'
