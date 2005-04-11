@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 require 'Rex/Post/Zeterpreter/Extension'
+require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Dir'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Process'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Registry'
 
@@ -24,6 +25,7 @@ class Stdapi < Extension
 
 		# Alias the following things on the client object so that they
 		# can be directly referenced
+		client.register_extension_alias('dir', self.dir)
 		client.register_extension_alias('process', self.process)
 		client.register_extension_alias('registry', self.registry)
 	end
@@ -32,6 +34,10 @@ class Stdapi < Extension
 		klass = klass.dup
 		klass.client = self.client
 		return klass
+	end
+
+	def dir
+		brand(Rex::Post::Zeterpreter::Extensions::Stdapi::Dir)
 	end
 
 	def process
