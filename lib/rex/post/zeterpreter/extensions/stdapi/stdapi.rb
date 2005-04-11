@@ -2,6 +2,7 @@
 
 require 'Rex/Post/Zeterpreter/Extension'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Dir'
+require 'Rex/Post/Zeterpreter/Extensions/Stdapi/File'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/FileStat'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Process'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Registry'
@@ -27,6 +28,7 @@ class Stdapi < Extension
 		# Alias the following things on the client object so that they
 		# can be directly referenced
 		client.register_extension_alias('dir', self.dir)
+		client.register_extension_alias('file', self.file)
 		client.register_extension_alias('filestat', self.filestat)
 		client.register_extension_alias('process', self.process)
 		client.register_extension_alias('registry', self.registry)
@@ -40,6 +42,10 @@ class Stdapi < Extension
 
 	def dir
 		brand(Rex::Post::Zeterpreter::Extensions::Stdapi::Dir)
+	end
+
+	def file
+		brand(Rex::Post::Zeterpreter::Extensions::Stdapi::File)
 	end
 
 	def filestat
