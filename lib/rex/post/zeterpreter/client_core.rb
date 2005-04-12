@@ -21,18 +21,17 @@ module Zeterpreter
 ###
 class ClientCore < Extension
 
-    def initialize(client)
-        super(client, "core")
-    end
+	def initialize(client)
+		super(client, "core")	
+	end
 
-    #
-    # Core commands
-    #
+	##
+	#
+	# Core commands
+	#
+	##
 
 =begin
-	
-	load_library
-
 	Loads a library on the remote zeterpreter instance.  This method
 	supports loading both extension and non-extension libraries and
 	also supports loading libraries from memory or disk depending
@@ -55,12 +54,11 @@ class ClientCore < Extension
 
 	Extension
 		Indicates whether or not the library is a zeterpreter extension
-
 =end
-    def load_library(opts)
-        library_path = opts['LibraryFilePath']
-        target_path  = opts['TargetFilePath']
-        load_flags   = LOAD_LIBRARY_FLAG_LOCAL
+	def load_library(opts)
+		library_path = opts['LibraryFilePath']
+		target_path  = opts['TargetFilePath']
+		load_flags   = LOAD_LIBRARY_FLAG_LOCAL
 
 		# No library path, no cookie.
 		if (library_path == nil)
@@ -122,9 +120,6 @@ class ClientCore < Extension
 	end
 
 =begin
-
-	use
-
 	Loads a zeterpreter extension on the remote server instance and
 	initializes the client-side extension handlers
 
@@ -137,7 +132,6 @@ class ClientCore < Extension
 	LoadFromDisk
 		Indicates that the library should be loaded from disk, not from
 		memory on the remote machine
-
 =end
 	def use(opts)
 		modules = []
@@ -159,9 +153,9 @@ class ClientCore < Extension
 					'LibraryFilePath' => 'data/zeterpreter/ext_server_' + mod.downcase + '.dll',
 					'UploadLibrary'   => true,
 					'Extension'       => true,
-                    'SaveToDisk'      => opts['LoadFromDisk']))
-                client.add_extension(mod)
-            end
+					'SaveToDisk'      => opts['LoadFromDisk']))
+				client.add_extension(mod)
+			end
 			
 		}
 
