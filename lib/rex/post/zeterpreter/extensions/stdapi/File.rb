@@ -47,7 +47,7 @@ class File < Rex::Post::Zeterpreter::Extensions::Stdapi::IO
 	def eof
 		return self.filed.eof
 	end
-	
+
 	# Returns the current position of the file pointer
 	def pos
 		return self.filed.tell
@@ -73,13 +73,8 @@ protected
 
 	# Creates a File channel using the supplied information
 	def _open(name, mode = "r", perms = 0)
-		return Channel.create(self.client, 'stdapi_fs_file', 
-				Rex::Post::Zeterpreter::Channels::Pools::File,
-				CHANNEL_FLAG_SYNCHRONOUS, 
-				[
-					{ 'type' => TLV_TYPE_FILE_PATH, 'value' => name       },
-					{ 'type' => TLV_TYPE_FILE_MODE, 'value' => mode + "b" },
-				])
+		return Rex::Post::Zeterpreter::Channels::Pools::File.open(
+				self.client, name, mode, perms)
 	end
 
 	attr_accessor :client
