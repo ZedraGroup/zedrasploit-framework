@@ -4,6 +4,7 @@ require 'socket'
 require 'Rex/Post/Zeterpreter/ClientCore'
 require 'Rex/Post/Zeterpreter/Channel'
 require 'Rex/Post/Zeterpreter/ChannelContainer'
+require 'Rex/Post/Zeterpreter/Dependencies'
 require 'Rex/Post/Zeterpreter/ObjectAliases'
 require 'Rex/Post/Zeterpreter/Packet'
 require 'Rex/Post/Zeterpreter/PacketParser'
@@ -106,9 +107,25 @@ class Client
 		self.ext_aliases.aliases[name] = ext
 	end
 
+	# Registers zero or more aliases that are provided in an array
+	def register_extension_aliases(aliases)
+		aliases.each { |a|
+			register_extension_alias(a['name'], a['ext'])
+		}
+	end
+
 	# Deregisters a previously registered extension alias
 	def deregister_extension_alias(name)
 		self.ext_aliases.aliases.delete(name)
+	end
+
+	# Dumps the extension tree
+	def dump_extension_tree()
+		items = []
+		items.concat(self.ext.dump_alias_tree('client.ext'))
+		items.concat(self.ext_aliases.dump_alias_tree('client'))
+
+		return items.sort
 	end
 
 	attr_reader   :ext
