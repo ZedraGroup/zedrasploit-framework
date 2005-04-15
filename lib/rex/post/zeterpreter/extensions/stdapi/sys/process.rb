@@ -5,6 +5,7 @@ require 'Rex/Post/Zeterpreter/Packet'
 require 'Rex/Post/Zeterpreter/Client'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Stdapi'
 
+require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Sys/ProcessSubsystem/Image'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Sys/ProcessSubsystem/Memory'
 
 module Rex
@@ -149,6 +150,7 @@ class Process < Rex::Post::Process
 
 		initialize_aliases(
 			{
+				'image'  => Rex::Post::Zeterpreter::Extensions::Stdapi::Sys::ProcessSubsystem::Image.new(self),
 				'memory' => Rex::Post::Zeterpreter::Extensions::Stdapi::Sys::ProcessSubsystem::Memory.new(self),
 			})
 	end
