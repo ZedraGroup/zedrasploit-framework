@@ -7,9 +7,10 @@ require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Tlv'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Fs/Dir'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Fs/File'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Fs/FileStat'
-require 'Rex/Post/Zeterpreter/Extensions/Stdapi/UI'
+require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Net/Config'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Sys/Process'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Sys/Registry'
+require 'Rex/Post/Zeterpreter/Extensions/Stdapi/UI'
 
 module Rex
 module Post
@@ -48,6 +49,13 @@ class Stdapi < Extension
 						{
 							'process'  => self.process,
 							'registry' => self.registry
+						})
+				},
+				{
+					'name' => 'net',
+					'ext'  => ObjectAliases.new(
+						{
+							'config'	=> Rex::Post::Zeterpreter::Extensions::Stdapi::Net::Config.new(client)
 						})
 				},
 				{
