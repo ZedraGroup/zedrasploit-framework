@@ -4,9 +4,9 @@ require 'Rex/Post/Zeterpreter/ObjectAliases'
 require 'Rex/Post/Zeterpreter/Extension'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Constants'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Tlv'
-require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Dir'
-require 'Rex/Post/Zeterpreter/Extensions/Stdapi/File'
-require 'Rex/Post/Zeterpreter/Extensions/Stdapi/FileStat'
+require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Fs/Dir'
+require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Fs/File'
+require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Fs/FileStat'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/UI'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Sys/Process'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Sys/Registry'
@@ -54,7 +54,7 @@ class Stdapi < Extension
 					'name' => 'ui',
 					'ext'  => UI.new(client)
 				}
-				
+
 			])
 	end
 
@@ -67,17 +67,17 @@ class Stdapi < Extension
 
 	# Returns a copy of the Dir class
 	def dir
-		brand(Rex::Post::Zeterpreter::Extensions::Stdapi::Dir)
+		brand(Rex::Post::Zeterpreter::Extensions::Stdapi::Fs::Dir)
 	end
 
 	# Returns a copy of the File class
 	def file
-		brand(Rex::Post::Zeterpreter::Extensions::Stdapi::File)
+		brand(Rex::Post::Zeterpreter::Extensions::Stdapi::Fs::File)
 	end
 
 	# Returns a copy of the FileStat class
 	def filestat
-		brand(Rex::Post::Zeterpreter::Extensions::Stdapi::FileStat)
+		brand(Rex::Post::Zeterpreter::Extensions::Stdapi::Fs::FileStat)
 	end
 
 	# Returns a copy of the Process class
