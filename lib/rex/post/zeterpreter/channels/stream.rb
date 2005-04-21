@@ -1,6 +1,7 @@
 #!/usr/bin/ruby
 
 require 'Rex/Socket/StreamAbstraction'
+require 'Rex/Post/Zeterpreter/Channel'
 
 module Rex
 module Post
@@ -15,7 +16,7 @@ module Zeterpreter
 # that sequential data is flowing in either one or both directions.
 #
 ###
-class Stream
+class Stream < Rex::Post::Zeterpreter::Channel
 
 	include Rex::Socket::StreamAbstraction
 
@@ -40,7 +41,7 @@ class Stream
 
 	##
 	#
-	# I/O handlers
+	# Remote I/O handlers
 	#
 	##
 

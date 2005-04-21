@@ -8,6 +8,7 @@ require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Fs/Dir'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Fs/File'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Fs/FileStat'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Net/Config'
+require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Net/Socket'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Sys/Process'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/Sys/Registry'
 require 'Rex/Post/Zeterpreter/Extensions/Stdapi/UI'
@@ -55,7 +56,8 @@ class Stdapi < Extension
 					'name' => 'net',
 					'ext'  => ObjectAliases.new(
 						{
-							'config'	=> Rex::Post::Zeterpreter::Extensions::Stdapi::Net::Config.new(client)
+							'config'   => Rex::Post::Zeterpreter::Extensions::Stdapi::Net::Config.new(client),
+							'socket'   => Rex::Post::Zeterpreter::Extensions::Stdapi::Net::Socket.new(client)
 						})
 				},
 				{
