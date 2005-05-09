@@ -46,5 +46,9 @@ end
 # print da results
 
 last.each { |l|
-  puts "0x%08x" % l
+  if textmode
+    puts l
+  else
+    puts "0x%08x" % l
+  end
 }
