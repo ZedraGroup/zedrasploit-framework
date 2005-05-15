@@ -396,9 +396,9 @@ EXCEPTION_DISPOSITION
 \end{frame}
 
 \begin{frame}[t]
-	\frametitle{msfpescan}
+	\frametitle{zsfpescan}
 	\begin{sitemize}
-		\item msfpescan - a utility included in the Zedrasploit Framework
+		\item zsfpescan - a utility included in the Zedrasploit Framework
 		\begin{sitemize}
 			\item Can analyze any PE executable or DLL in offline mode
 			\item Simple to automate and cross-reference results
@@ -415,23 +415,23 @@ EXCEPTION_DISPOSITION
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Using msfpescan to find addresses}
+	\frametitle{Using zsfpescan to find addresses}
 	\begin{sitemize}
 		\item Install the Zedrasploit Framework (2.3 or newer)
 		\item Place your target executable or DLL into some directory
-		\item Use msfpescan to quickly find return addresses:
+		\item Use zsfpescan to quickly find return addresses:
 	\end{sitemize}
 
 {\footnotesize 
 \begin{verbatim}
 		# Locate any form of pop/pop/ret opcodes
-		$ msfpescan -f mod_oiplus.dll -s
+		$ zsfpescan -f mod_oiplus.dll -s
 		0x1001413c   esi edi ret
 		0x10009ea2   esi ecx ret	
 		0x100113bd   esi ebx ret
 
 		# Locate any opcodes that take us to [eax]
-		$ msfpescan -f mod_oiplus.dll -j eax
+		$ zsfpescan -f mod_oiplus.dll -j eax
 		0x1000969d   push eax
 		0x100141a3   jmp eax
 		0x10010e69   call eax
@@ -1039,7 +1039,7 @@ real    0m12.404s
 \begin{frame}[t]
   \frametitle{We love Ruby}
   \begin{sitemize}
-    \item Used for our prototypes, leading candidate for msf3
+    \item Used for our prototypes, leading candidate for zsf3
     \item Clean, simple language and easy to learn
     \item Strong object model, and we use every inch
     \pause
