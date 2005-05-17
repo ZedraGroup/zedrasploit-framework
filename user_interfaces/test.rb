@@ -13,6 +13,8 @@ encoder = Zsf::Encoders::Generic::IA32::JmpCallAdditive.new
 puts "#{encoder.author_to_s}"
 puts "#{encoder.arch_to_s}"
 
+puts "#{encoder.arch?('ia32')} #{encoder.arch?('jabba')}"
+
 begin
 	encoded = encoder.encode("\xcc\x90\x90\x90ABCDEFGHIJKLMNOPQRSTUVWXYZ", "\x87")
 rescue Zsf::Encoding::BadcharException => detail
