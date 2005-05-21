@@ -1,4 +1,4 @@
-require 'Zsf'
+require 'Core'
 
 module Zsf
 module Nops
