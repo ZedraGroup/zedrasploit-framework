@@ -1,4 +1,4 @@
-require 'Core'
+require 'Zsf/Core'
 
 module Zsf
 
@@ -260,5 +260,5 @@ end
 
 end
 
-require 'Core/Encoder/Xor'
-require 'Core/Encoder/XorAdditiveFeedback'
+require 'Zsf/Core/Encoder/Xor'
+require 'Zsf/Core/Encoder/XorAdditiveFeedback'

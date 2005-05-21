@@ -1,4 +1,4 @@
-require 'Shared/Constants'
+require 'Zsf/Shared/Constants'
 
 module Zsf
 module Logging
@@ -52,4 +52,4 @@ end
 
 end; end
 
-require 'Shared/Logging/Sinks/Flatfile'
+require 'Zsf/Shared/Logging/Sinks/Flatfile'

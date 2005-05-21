@@ -1,4 +1,4 @@
-require 'Shared'
+require 'Zsf/Shared'
 
 module Zsf
 module Logging

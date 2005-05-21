@@ -1,4 +1,4 @@
-require 'Core'
+require 'Zsf/Core'
 
 module Zsf
 

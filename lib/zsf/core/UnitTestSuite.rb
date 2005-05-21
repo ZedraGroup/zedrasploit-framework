@@ -1,4 +1,4 @@
-require 'Core'
+require 'Zsf/Core'
 
 module Zsf
 module Test
@@ -16,7 +16,7 @@ class FrameworkCoreTestSuite
 	def self.suite
 		suite = ::Test::Unit::TestSuite.new
 
-		suite << Zsf::Test::DataStoreTestCase.suite
+		suite << Zsf::Test::OptionContainerTestCase.suite
 
 		return suite;
 	end

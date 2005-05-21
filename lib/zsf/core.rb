@@ -11,25 +11,26 @@
 
 # Unit testing
 require 'test/unit'
-require 'Core/UnitTestSuite'
+require 'Zsf/Core/UnitTestSuite'
 
 # framework-core depends on framework-shared
-require 'Shared'
+require 'Zsf/Shared'
 
 # General
-require 'Core/Constants'
-require 'Core/Exceptions'
-require 'Core/DataTypes'
-require 'Core/EventDispatcher'
-require 'Core/DataStore'
+require 'Zsf/Core/Constants'
+require 'Zsf/Core/Exceptions'
+require 'Zsf/Core/DataTypes'
+require 'Zsf/Core/EventDispatcher'
+require 'Zsf/Core/DataStore'
+require 'Zsf/Core/OptionContainer'
 
 # Framework context and core classes
-require 'Core/Framework'
-require 'Core/Session'
+require 'Zsf/Core/Framework'
+require 'Zsf/Core/Session'
 
 # Modules
-require 'Core/Module'
-require 'Core/Encoder'
-require 'Core/Exploit'
-require 'Core/Nop'
-require 'Core/Recon'
+require 'Zsf/Core/Module'
+require 'Zsf/Core/Encoder'
+require 'Zsf/Core/Exploit'
+require 'Zsf/Core/Nop'
+require 'Zsf/Core/Recon'
