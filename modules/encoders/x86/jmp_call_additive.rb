@@ -2,7 +2,6 @@ require 'Zsf/Core'
 
 module Zsf
 module Encoders
-module Generic
 module IA32
 
 class JmpCallAdditive < Zsf::Encoder::XorAdditiveFeedback
@@ -34,4 +33,4 @@ class JmpCallAdditive < Zsf::Encoder::XorAdditiveFeedback
 
 end
 
-end end end end
+end end end

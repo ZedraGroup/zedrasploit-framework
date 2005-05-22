@@ -1,15 +1,25 @@
 #!/usr/bin/ruby -I../Lib -I../Modules
 
 require 'Zsf/Core'
-require 'Encoders/IA32/JmpCallAdditive'
-require 'Nops/IA32/SingleByte'
+#require 'Encoders/IA32/JmpCallAdditive'
+#require 'Nops/IA32/SingleByte'
 
 register_log_source('core', Zsf::Logging::Sinks::Flatfile.new('/tmp/zsfcli.log'))
 
 dlog('yo yo yo')
 
+framework = Zsf::Framework.new
+
+framework.modules.add_module_path('/home/mmiller/zsf/rubyhacks/prototype/Modules')
+
+
+framework.encoders.each { |encoder|
+	puts "got encoder #{encoder}"
+}
+
+encoder = framework.encoders.create('JmpCallAdditive')
+
 #encoder = framework.encoders.instantiate('gen_ia32_jmp_call_additive')
-encoder = Zsf::Encoders::Generic::IA32::JmpCallAdditive.new
 
 puts "#{encoder.author_to_s}"
 puts "#{encoder.arch_to_s}"

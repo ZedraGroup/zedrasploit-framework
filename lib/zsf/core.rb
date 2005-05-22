@@ -25,8 +25,9 @@ require 'Zsf/Core/DataStore'
 require 'Zsf/Core/OptionContainer'
 
 # Framework context and core classes
-require 'Zsf/Core/Framework'
+require 'Zsf/Core/ModuleManager'
 require 'Zsf/Core/Session'
+require 'Zsf/Core/Framework'
 
 # Modules
 require 'Zsf/Core/Module'
