@@ -238,6 +238,7 @@ end
 
 module Test
 
+begin
 ###
 #
 # OptionContainerTestCase
@@ -334,7 +335,7 @@ class OptionContainerTestCase < ::Test::Unit::TestCase
 				"advanced option failed")
 	end
 end
-
+rescue
 end
 
 end

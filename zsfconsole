@@ -1,0 +1,5 @@
+#!/usr/bin/ruby -I../Lib
+
+require 'zsf/Ui'
+
+zsf::Ui::Console::Driver.new.run
