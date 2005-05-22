@@ -13,8 +13,6 @@ module Zsf
 ###
 class Framework
 
-	include Zsf::Logging::LogDispatcher
-
 	def initialize()
 		self.events   = EventDispatcher.new
 #		self.encoders = EncoderManager.new
