@@ -22,6 +22,7 @@ require 'Zsf/Core/OptionContainer'
 
 # Framework context and core classes
 require 'Zsf/Core/ModuleManager'
+require 'Zsf/Core/SessionManager'
 require 'Zsf/Core/Session'
 require 'Zsf/Core/Framework'
 
