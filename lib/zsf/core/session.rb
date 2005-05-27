@@ -57,3 +57,11 @@ protected
 end
 
 end
+
+# 
+# Require the individual provider interfaces
+#
+require 'Zsf/Core/SessionProvider/SingleCommandExecution'
+require 'Zsf/Core/SessionProvider/MultiCommandExecution'
+require 'Zsf/Core/SessionProvider/SingleCommandShell'
+require 'Zsf/Core/SessionProvider/MultiCommandShell'
